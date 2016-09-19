@@ -8,9 +8,7 @@
 
 using namespace std;
 
-// This number is very close to INT_MAX. Written in Hexadecimal
-// 7ffffff  in hexadecimal = 2147483646 in decimal
-#define INF 0x7ffffffe
+#define INF 0x3f3f3f3f
 #define LEN 16
 
 typedef pair<int, int> iPair;

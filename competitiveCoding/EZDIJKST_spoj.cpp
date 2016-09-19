@@ -6,9 +6,7 @@
 
 using namespace std;
 
-// This number is very close to INT_MAX. Written in Hexadecimal
-// 7FFFFFF  in hexadecimal = 2147483646 in decimal
-#define INF 0x7FFFFFFE
+#define INF 0x3f3f3f3f
 
 typedef pair<int, int> iPair;
 
@@ -18,8 +16,7 @@ void dijskstra() {
     // src -> source node
     int V, E, src, dest, done = -1;
 
-    // Pointer to the array containg adjacenccy lists
-    // taking a little more memory than the required one.
+    // Adjacency list
     list<iPair> adj[10009];
 
     // min-priority queue
@@ -38,7 +35,6 @@ void dijskstra() {
         cin >> u >> v >> d;
         adj[u].push_back(make_pair(d,v));
     }
-
     cin >> src >> dest;
 
     // Insert source itself in priority queue and initialize
@@ -82,7 +78,6 @@ void dijskstra() {
 int main()
 {
     int t;
-
 
     cin >> t;
     // Finds minimum Distance from the source node to all the nodes.

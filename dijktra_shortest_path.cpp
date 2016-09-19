@@ -16,9 +16,7 @@
 
 using namespace std;
 
-// This number is very close to INT_MAX. Written in Hexadecimal
-// 7FFFFFF  in hexadecimal = 2147483646 in decimal
-#define INF 0x7FFFFFFE
+#define INF 0x3f3f3f3f
 // Maxmium Number of vertices in the graph
 #define MAXV 10001
 
@@ -182,8 +180,7 @@ int main()
     int t;
 
     cin >> t;
-    // Finds minimum Distance from the source node to all the nodes.
-    for (int i = 0; i < t; i++) dijkstra();
+    for (int i = 0; i < t; i++) dijkstrasAllNodes();
 
     return 0;
 }

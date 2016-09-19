@@ -4,11 +4,9 @@
 #include <utility>
 
 using namespace std;
-// This number is very close to INT_MAX. Written in Hexadecimal
-// 7FFFFFF  in hexadecimal = 2147483647 in decimal
-#define INF 0x7FFFFFFE
-// Maxmium Number of vertices in the graph
-#define MAXV 10001
+
+#define INF 0x3f3f3f3f
+#define MAXV 10001 //Maxmium Number of vertices in the graph
 
 typedef pair<int, int> iPair;
 
