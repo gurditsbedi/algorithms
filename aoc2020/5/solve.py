@@ -16,6 +16,7 @@ def binary_jumping(s, low_value, high_value, up_ins, low_ins):
 
 with open("./input", "r") as f:
     max_seat = 0
+    avail_seats = []
     for l in f.readlines():
         line = l.strip()
         row_code = line[:7]
@@ -28,5 +29,14 @@ with open("./input", "r") as f:
         if seat > max_seat:
             max_seat = seat
 
+        avail_seats.append(seat)
+
     print(max_seat)
+
+    avail_seats.sort()
+    for i in range(len(avail_seats)-1):
+        if avail_seats[i+1] - avail_seats[i] > 1:
+            print(avail_seats[i] + 1)
+            break
+
 
