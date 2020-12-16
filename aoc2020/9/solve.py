@@ -27,3 +27,26 @@ with open("./input", "r") as f:
             break
 
     print(invalid)
+
+    curr_sum = numbers[0]
+    start_idx = 0
+    end_idx = 0
+
+    for i in range(1, len(numbers)):
+        if curr_sum == invalid:
+            s = min(numbers[start_idx: end_idx+1])
+            m = max(numbers[start_idx: end_idx+1])
+            print(s+m)
+            break
+
+        new_sum = curr_sum + numbers[i]
+        end_idx += 1
+
+        if new_sum > invalid:
+            while new_sum > invalid:
+                new_sum = new_sum - numbers[start_idx]
+                start_idx += 1
+            curr_sum = new_sum
+
+        elif new_sum < invalid:
+            curr_sum = new_sum
