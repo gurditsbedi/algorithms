@@ -11,3 +11,20 @@ with open("./input", "r") as f:
 
     print(counter_one[1] * counter_one[3])
 
+    numbers = [0] + numbers
+    counter_two = [0] * len(numbers)
+
+    counter_two[-1] = 1
+    counter_two[-2] = 1
+    counter_two[-3] = 1
+
+    if numbers[-1] - numbers[-3] <=3:
+        counter_two[-3] += 1
+
+    for i in range(len(numbers)-4, -1, -1):
+        for j in [1, 2, 3]:
+            if numbers[i+j] - numbers[i] <= 3:
+                counter_two[i] += counter_two[i+j]
+
+    print(counter_two[0])
+
